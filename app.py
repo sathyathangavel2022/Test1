@@ -30,15 +30,7 @@ def tracking():
 
 @app.route('/ingress_result')
 def ingress_result():
-   return render_template_string('''
-<html>
-    <head>
-    </head>
-    <body>
-        <p>Welcome to Ingress Test data!</p>
-    </body>
-</html>
-'''
+   return "<h1>Welcome to Ingress Test page!</h1>"
 
 if __name__ == '__main__':
    port = int(os.environ.get('PORT', 5000))
