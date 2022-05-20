@@ -28,7 +28,7 @@ def tracking():
    my_data = Tracking.query.get(track)
    return render_template('tracking.html', result = my_data)
 
-@app.route('/ingress_result')
+@app.route('/ingress')
 def ingress_result():
    return "<h1>Welcome to Ingress Test page!</h1>"
 
