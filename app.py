@@ -4,8 +4,8 @@ import os
 
 app = Flask(__name__)
 app.secret_key = "Secret Key"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/shipping'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@sathya-mysql-service/shipping'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 

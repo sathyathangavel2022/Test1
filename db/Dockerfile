@@ -1,4 +1,5 @@
-FROM mysql
+FROM mysql:latest
+WORKDIR /app
 ENV MYSQL_ROOT_PASSWORD=root
-ADD init.sql /docker-entrypoint-initdb.d
+ADD init.sql /docker-entrypoint-initdb.d/
 EXPOSE 3306

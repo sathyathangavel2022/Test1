@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: sathya-mysql
+  namespace: batch2
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: sql-app
+      tier: backend
+      track: stable
+  template: 
+    metadata: 
+      labels: 
+        app: sql-app
+        tier: backend
+        track: stable
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: MYSQL_ROOT_PASSWORD
+              value: root
+          image: 915551958967.dkr.ecr.ap-south-1.amazonaws.com/mysql_container:sathya_image
+          imagePullPolicy: Always
+          name: mysql-container
+          ports: 
+            - 
+              containerPort: 3306
+              name: http
